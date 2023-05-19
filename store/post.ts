@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { Post } from '@/types'
-console.log('process.server')
+
 export const usePostStore = defineStore('post-store', {
   state: () => ({
     data: [] as Post[],
