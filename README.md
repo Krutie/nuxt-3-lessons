@@ -10,7 +10,7 @@
 
 **Happy path:**
 
-- clone the repo
+- clone the branch `issue-20941`
 - `yarn install` & `yarn dev`
 - visit [http://localhost:3000/](http://localhost:3000/) - see the data loading just fine from the server-side Nuxt plugin
 
