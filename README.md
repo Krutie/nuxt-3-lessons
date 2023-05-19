@@ -2,9 +2,11 @@
 
 
 **Objective:** 
-1. Fetch data on the sever-side using Nuxt plugin, 
-2. Set data in the Pinia store and finally, 
-3. Access this data on app.vue or Nuxt pages
+1. Fetch data on the sever-side using Nuxt plugin  `(/plugins/init.server.ts)`
+2. Set data in the Pinia store `(/store/post.ts)`
+3. And finally, access this data on `app.vue` or Nuxt pages `(/app.vue)`
+
+--- 
 
 **Happy path:**
 
