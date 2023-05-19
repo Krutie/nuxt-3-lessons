@@ -1,42 +1,27 @@
-# Nuxt 3 Minimal Starter
+# Issue [20941](https://github.com/nuxt/nuxt/issues/20941) reproduction steps
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+**Objective:** 
+1. Fetch data on the sever-side using Nuxt plugin, 
+2. Set data in the Pinia store and finally, 
+3. Access this data on app.vue or Nuxt pages
 
-Make sure to install the dependencies:
+**Happy path:**
 
-```bash
-# yarn
-yarn install
+- clone the repo
+- `yarn install` & `yarn dev`
+- visit [http://localhost:3000/](http://localhost:3000/) - see the data loading just fine from the server-side Nuxt plugin
 
-# npm
-npm install
+**Broken path:**
 
-# pnpm
-pnpm install
-```
+- `yarn add -D @nuxt/devtools` 
+- uncomment `// '@nuxt/devtools'` in the `nuxt.config.ts`
+- `yarn dev`
+- visit [http://localhost:3000/](http://localhost:3000/) - see empty []
 
-## Development Server
+**Back to happy path:**
 
-Start the development server on `http://localhost:3000`
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- `yarn remove @nuxt/devtools` 
+- comment `// '@nuxt/devtools'` in the `nuxt.config.ts`
+- yarn dev 
+- visit [http://localhost:3000/](http://localhost:3000/) - see the data loading just fine from the server-side Nuxt plugin
