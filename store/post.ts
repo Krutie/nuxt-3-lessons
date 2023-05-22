@@ -14,8 +14,8 @@ export const usePostStore = defineStore('post-store', {
      */
     async get() {
       try {
-        const response = await useFetch('https://dummyjson.com/posts')
-        this.data = response.data.value ? response.data.value.posts : []
+        const posts = await useFetch<Post[]>('/api/post')
+        this.data = posts.data ? posts.data.value as Post[] : []
       } catch (error) {
         console.log('error in fetching posts')
       }
